@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sm{
+            width: 100%;
+            height: 20px;
+            background-color: linen;
+
+        }
+        #sb{
+            width: 0%;
+            height: 100%;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <label>password</label>
+    <input type="password" id="pwd" oninput="cps()">
+    <div id="sm">
+        <div id="sb"></div>
+    </div>
+    <p id="st">strength:</p>
+    <script>
+        function cps(){
+            const p=document.getElementById('pwd').value;
+            const sb=document.getElementById('sb');
+            const st=document.getElementById('st');
+            let strength=0; 
+            if(p.length>1) strength+=10;
+            if(p.length>=8) strength+=10;
+            if(/[A-Z]/.test(p)) strength+=20;
+            if(/[0-9]/.test(p)) strength+=20;
+            if(/[a-z]/.test(p)) strength+=20;
+            if(/[^A-Za-z0-9]/.test(p)) strength+=20;
+            sb.style.width=strength+'%';
+            if(strength<=30){
+                sb.style.backgroundColor='red';
+                st.textContent=`strength: ${strength}%`;}
+            else if(strength<=60){
+                sb.style.backgroundColor='orange';
+                st.textContent=`strength: ${strength}%`;}
+            else{
+                sb.style.backgroundColor='green';
+                st.textContent=`strength: ${strength}%`;}
+        }
+    </script>
+</body>
+</html>

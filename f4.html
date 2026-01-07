@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="s">Are you a boy?</label>
+    <select id="s">
+        <option value="">--select--</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+    <div id="b" style="display:none;">
+        <label for="n">boy Name:</label>
+        <input type="text" id="n">
+        <br>
+        <label for="a">age</label>
+        <input type="number" id="a">
+    </div>
+    <div id="g" style="display:none;">
+        <label for="m">girl Name:</label>
+        <input type="text" id="m">
+        <br>
+        <label for="aa">age</label>
+        <input type="number" id="aa">
+    </div>
+    <script>
+        const s=document.getElementById('s');
+        const b=document.getElementById('b');
+        const g=document.getElementById('g');
+        if(s.value==='yes'){
+            b.style.display='block';
+            g.style.display='none';}
+        if(s.value==='no'){
+            g.style.display='block';
+            b.style.display='none';}
+        if(s.value===''){
+            b.style.display='none';
+            g.style.display='none';}
+    </script>
+</body>
+</html>

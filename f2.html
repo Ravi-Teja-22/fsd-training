@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form2">
+        <label for="pass">password:</label>
+        <input type="password" id="pass" name="pass" minlength="8" required><br>
+        <p id="passhint"></p>
+    </form>
+    <script>
+        const p=document.getElementById('pass');
+        const phint=document.getElementById('passhint');
+        p.addEventListener('input',()=>{
+            const v=p.value;
+            if(v.length<8){
+                phint.textContent="password must be at least 8 characters long";
+                phint.style.color="red";
+            }else if(!/[A-Z]/.test(v)){
+                phint.textContent="password must contain at least one uppercase letter";
+                phint.style.color="orange";
+            }else if(!/[a-z]/.test(v)){
+                phint.textContent="password must contain at least one lowercase letter";
+                phint.style.color="yellow";
+            }else if(!/[0-9]/.test(v)){
+                phint.textContent="password must contain at least one digit";
+                phint.style.color="green";}
+            else {
+                phint.textContent="strong password";
+                phint.style.color="blue";
+            }
+        })
+    </script>
+</body>
+</html>

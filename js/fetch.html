@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <button onclick="call()">fetch user</button>
+        <div id="out"></div>
+    <script>
+        const out=document.getElementById("out");
+        const fetchData= async(i)=>{
+            const res=await fetch(`https://jsonplaceholder.typicode.com/users/`);
+            if(!res.ok){
+                alert("error in fetching");
+            }
+            const data=await res.json();
+            data.map((user)=>{
+                console.log(user.name);
+                out.innerHTML +=`user name is ${user.name}
+            <br>user email is ${user.email}
+            <br>user phone is ${user.phone}<br>`;
+            });
+            
+        }
+        const call=()=>{            
+                fetchData();
+            
+        }
+        </script>
+    </div>
+</body>
+</html>

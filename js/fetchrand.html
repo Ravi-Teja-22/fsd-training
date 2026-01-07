@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="di">
+        <input type="number" id="inp">
+        <button onclick="call()">fetch user</button>
+        <button onclick="rand()">random</button>
+
+    </div>
+    <div id="out"></div>
+    <script>
+       const f=async(u)=>{
+        const res=await fetch(`https://jsonplaceholder.typicode.com/users/${u}`);
+        const data=await res.json();
+        document.getElementById("out").innerHTML=`user name is ${data.name}
+        <br>user email is ${data.email}`;
+       }
+       function call(){
+        const inp = document.getElementById("inp").value;
+        const di=document.getElementById("di");
+        if(!inp){
+            out.innerHTML=`<h1>enter valid number</h1>`;
+        }
+        else{
+            f(inp);
+        }
+       }
+       function rand(){
+        const inp = document.getElementById("inp");
+        const r=Math.floor(Math.random()*10)+1;
+        inp.value=r;
+        f(r);
+       }
+    </script>
+</body>
+</html>

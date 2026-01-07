@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ci" placeholder="Enter city name">
+    <button onclick="fun()">search</button>
+    <p id="pa"></p>
+    <div id="out"></div>
+    <script>
+        const fetchdta=async(ci)=>{
+            const apikey="867cd052427743ef527388cfeb8d9dfa";
+            const pa=document.getElementById("pa");
+            const out=document.getElementById("out");
+            const res=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ci}&appid=${apikey}&units=metric`);
+            if(!res.ok){
+                pa.textContent="City not found.";
+                return;
+            }
+            const dta=await res.json();
+            console.log(dta);
+            console.log(dta.name)
+            out.innerHTML=`
+                <h2>Weather in: ${dta.name}</h2>
+                <p>Temperature: ${dta.main.temp} °C</p>
+                `;
+        }
+        const fun=()=>{
+            const ci=document.getElementById("ci").value.trim();
+            const pa=document.getElementById("pa");
+            pa.style.color="red";
+            if(!ci){
+                pa.textContent="Enter a city name.";
+                return;
+            }
+            fetchdta(ci)
+        }
+    </script>
+</body>
+</html>
