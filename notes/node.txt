@@ -60,3 +60,18 @@ threadloop - offloads long task
 eventloop - waits for task to finish
     |
 callback
+
+event emitter ex:
+
+const eventemitter =require('events')
+
+// create a new instance of eventemitter
+const myemitter = new eventemitter
+
+// attach a listener to the 'greet' event
+myemitter.on('greet',()=>{
+    console.log('hello, world!');
+});
+
+// emitt the 'greet' event
+myemitter.emitt('greet');
