@@ -11,3 +11,5 @@ vite method commands
 1.npm create vite@latest . = creates a react app with vite method.
 2. npm i = installs all the libraries required.
 3. npm run dev = runs the application.
+
+react hooks - hooks are special js functional components to use features like state life cycle methods, and more features that were earlier available only in class components. 
