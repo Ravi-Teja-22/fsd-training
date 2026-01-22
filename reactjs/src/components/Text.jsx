@@ -6,7 +6,7 @@ const Text = () => {
   return (
     <div>
       <input type="text"  id="te"placeholder='enter something' onInput={(e)=>{setinput(e.target.value)}}/>
-      <button onClick={()=>{{settext(input)}}}>show</button>
+      <button onClick={()=>{{settext(input)}}}>show1</button>
       {text}
     </div>
   )
