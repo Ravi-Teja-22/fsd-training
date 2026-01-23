@@ -13,6 +13,7 @@ import Dependencies from "./components/Dependencies";
 import UseRefexam from "./components/UseRefexam";
 function App() {
   return (
+
     <div>
       {/* <Navbar />
       <Skills />
@@ -24,7 +25,7 @@ function App() {
       {/* <Arrexam/> */}
       {/* <Objexam/> */}
       {/* <BasicUseEffect/> */}
-      {/* <Dependencies/> */}
+      <Dependencies/>
       <UseRefexam/>
     </div>
   );
