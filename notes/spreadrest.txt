@@ -58,3 +58,4 @@ const [first,second, ...rest] = [10, 20, 30, 40];
 const person = { name: "Bob", age: 30, city: "Paris" };
 const { name, ...otherDetails } = person;
 // name = "Bob", otherDetails = { age: 30, city: "Paris" }
+

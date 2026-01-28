@@ -82,3 +82,5 @@ These tools work together to ensure asynchronous tasks are handled efficiently w
 Asynchronous programming is a core concept in JavaScript that enables the language to handle long-running tasks efficiently while maintaining responsiveness.
 
 > JavaScript may be single-threaded, but asynchronous programming makes it powerful enough to handle complex, real-world applications.
+
+

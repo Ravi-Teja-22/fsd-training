@@ -83,3 +83,4 @@ console.log(original.details.age); // ✅ 25
 | Nested         | Referenced (shared memory)          | Fully cloned (independent copy)                     |
 | Common methods | `Object.assign()`, spread (`{...}`) | `structuredClone()`, `JSON.parse(JSON.stringify())` |
 | Best for       | Simple objects                      | Complex/nested objects                              |
+
