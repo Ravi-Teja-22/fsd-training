@@ -424,4 +424,4 @@ html
 5. Use async/await: Makes code more readable than promise chains
 6. Implement timeout: Consider adding timeout logic to fetch requests
 7. Secure your API keys: Never expose API keys in client-side code in production
-8. Handle loading states: Show loading indicators during API calls
+8. Handle loading states: Show loading indicators during API calls 
